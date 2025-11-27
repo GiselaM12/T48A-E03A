@@ -1,6 +1,56 @@
 # T48A-E03A
 E50A Examen del tercer parcial
 
+
+# Caso Práctico: Detección y Clasificación de Incidentes en un Centro de Soporte TI
+
+## Contexto
+Una empresa de TI recibe cientos de tickets diarios relacionados con problemas técnicos (fallos de red, errores de software, problemas de hardware, etc.).  
+El objetivo es **automatizar la clasificación y análisis de estos tickets** para mejorar la velocidad de respuesta y optimizar recursos.
+
+---
+
+## Datos Disponibles
+- Texto del ticket (descripción del problema)
+- Categoría esperada (si está etiquetado)
+- Tiempo de resolución
+- Severidad (alta, media, baja)
+- Historial de tickets anteriores
+
+---
+
+## Cómo aplicar cada algoritmo
+
+### 1. Algoritmo Vecino Más Cercano (K-NN)
+**Uso:** Clasificación automática de tickets según similitud con tickets anteriores.  
+- **Entrada:** Texto del ticket convertido en vectores (TF-IDF o embeddings).  
+- **Proceso:** Buscar los tickets más similares y asignar la categoría más frecuente entre los vecinos.  
+- **Ejemplo:** Un ticket con “error de conexión VPN” se clasifica como “Problema de red” porque sus vecinos más cercanos son tickets similares.
+
+---
+
+### 2. Algoritmo K-Means
+**Uso:** Agrupamiento de tickets para descubrir patrones ocultos.  
+- **Entrada:** Representación vectorial de los tickets.  
+- **Proceso:** Agrupar tickets en clusters (ej. problemas de red, software, hardware).  
+- **Ejemplo:** Detectar que hay un cluster creciente de tickets relacionados con “fallos en la autenticación”, lo que indica un problema masivo.
+
+---
+
+### 3. Algoritmo Perceptrón
+**Uso:** Clasificación binaria (ej. ¿ticket urgente o no?).  
+- **Entrada:** Severidad, palabras clave, tiempo estimado.  
+- **Proceso:** Entrenar un perceptrón para decidir si el ticket debe ser atendido inmediatamente.  
+- **Ejemplo:** Tickets con palabras como “caída total” se marcan como urgentes.
+
+---
+
+### 4. Algoritmo Perceptrón Multicapa (MLP)
+**Uso:** Clasificación más compleja (varias categorías: red, software, hardware, seguridad).  
+- **Entrada:** Texto del ticket + metadatos.  
+
+
+
 # Ejercicio de Machine Learning para Soporte TI
 
 Este ejercicio utiliza un dataset **ficticio** de 200 tickets de soporte TI para practicar cinco enfoques de Machine Learning:
